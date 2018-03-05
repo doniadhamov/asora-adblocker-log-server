@@ -1,7 +1,5 @@
 package io.asora.logs.domain;
 
-import java.util.Date;
-
 public class LogEntry {
 
     private String cat;
@@ -11,12 +9,12 @@ public class LogEntry {
     private String d3;
     private String d4;
     private String tab;
-    private Date tstamp;
+    private Long tstamp;
 
     public LogEntry() {
     }
 
-    public LogEntry(String cat, D0 d0, String d1, String d2, String d3, String d4, String tab, Date tstamp) {
+    public LogEntry(String cat, D0 d0, String d1, String d2, String d3, String d4, String tab, Long tstamp) {
         this.cat = cat;
         this.d0 = d0;
         this.d1 = d1;
@@ -83,11 +81,11 @@ public class LogEntry {
         this.tab = tab;
     }
 
-    public Date getTstamp() {
+    public Long getTstamp() {
         return tstamp;
     }
 
-    public void setTstamp(Date tstamp) {
+    public void setTstamp(Long tstamp) {
         this.tstamp = tstamp;
     }
 

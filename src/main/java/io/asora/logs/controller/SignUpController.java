@@ -1,6 +1,6 @@
 package io.asora.logs.controller;
 
-import io.asora.logs.domain.LogEntry;
+import io.asora.logs.domain.SignUp;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,22 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/log")
-public class LogController {
+@RequestMapping(value = "/signUp")
+public class SignUpController {
 
-    private List<LogEntry> logEntryList = new ArrayList<>();
+    private List<SignUp> signUpList = new ArrayList<>();
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<LogEntry> findAll() {
-        return logEntryList;
+    public List<SignUp> findAll() {
+        return signUpList;
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String create(@RequestBody List<LogEntry> logEntries) {
-        logEntries.forEach(item -> {
-            logEntryList.add(item);
-        });
+    public String create(@RequestBody SignUp signUp) {
+        signUpList.add(signUp);
 
-        return "Logs were added!";
+        return "You have successfully signed up!";
     }
 }
